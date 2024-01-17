@@ -84,11 +84,15 @@ def readColmapCameras(cam_extrinsics, cam_intrinsics, images_folder):
 
         if intr.model=="SIMPLE_PINHOLE":
             focal_length_x = intr.params[0]
+            sys.stdout.write("Focal x: {}".format(focal_length_x))
+            sys.stdout.flush()
             FovY = focal2fov(focal_length_x, height)
             FovX = focal2fov(focal_length_x, width)
         elif intr.model=="PINHOLE":
             focal_length_x = intr.params[0]
             focal_length_y = intr.params[1]
+            sys.stdout.write("Focal x: {}\n Focal y: {}".format(focal_length_x, focal_length_y))
+            sys.stdout.flush()
             FovY = focal2fov(focal_length_y, height)
             FovX = focal2fov(focal_length_x, width)
         else:
