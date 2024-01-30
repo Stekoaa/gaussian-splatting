@@ -22,8 +22,8 @@ from arguments import ModelParams, PipelineParams, get_combined_args
 from gaussian_renderer import GaussianModel
 
 def render_set(model_path, name, iteration, views, gaussians, pipeline, background):
-    render_path = os.path.join(model_path, name, "ours_test_{}".format(iteration), "renders")
-    gts_path = os.path.join(model_path, name, "ours_test_{}".format(iteration), "gt")
+    render_path = os.path.join(model_path, name, "paper_images_{}".format(iteration), "renders")
+    gts_path = os.path.join(model_path, name, "paper_images_{}".format(iteration), "gt")
 
     makedirs(render_path, exist_ok=True)
     makedirs(gts_path, exist_ok=True)
